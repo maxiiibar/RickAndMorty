@@ -297,6 +297,7 @@ const body = document.querySelector("body")
 const botonModo = document.querySelector("#modoBoton")
 const footer = document.querySelector("footer")
 botonModo.addEventListener("click",() => {
+	const valorB = JSON.parse(localStorage.getItem("tema"))
     botonModo.classList.toggle('botonOscuro')
     body.classList.toggle('bodyOscuro')
     navBar.classList.toggle('navOscuro')
