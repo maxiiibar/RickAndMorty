@@ -66,7 +66,7 @@ const cardsPersonajes = (data, botonTipo) => {
     if (botonTipo === "boton-favorito"){
         const card = data.reduce((acc, element) => {
             return acc + `
-                <div class="card-personaje">
+                <div class="card-personaje" id="cardP${element.id}">
                     <div class="imagen-personaje">
                         <img src="${element.image || "imagen-no-disponible.png"}">
                     </div>
@@ -87,7 +87,7 @@ const cardsPersonajes = (data, botonTipo) => {
     else{
         const card = data.reduce((acc, element) => {
             return acc + `
-                <div class="card-personaje">
+                <div class="card-personaje" id="cardP${element.id}">
                     <div class="imagen-personaje">
                         <img src="${element.image || "imagen-no-disponible.png"}">
                     </div>
@@ -110,7 +110,7 @@ const cardsPersonajes = (data, botonTipo) => {
 const singlePCard = (element, botonTipo) => {
     if (botonTipo === "boton-favorito"){
         const singleP = `
-            <div class="card-personaje">
+            <div class="card-personaje" id="cardP${element.id}">
                 <div class="imagen-personaje">
                     <img src="${element.image || "imagen-no-disponible.png"}">
                 </div>
@@ -129,7 +129,7 @@ const singlePCard = (element, botonTipo) => {
     }
     else{
         const singleP = `
-            <div class="card-personaje">
+            <div class="card-personaje" id="cardP${element.id}">
                 <div class="imagen-personaje">
                     <img src="${element.image || "imagen-no-disponible.png"}">
                 </div>
@@ -152,7 +152,7 @@ const cardsEpisodios = (data, botonTipo) => {
     if (botonTipo==="boton-favorito"){
         const card = data.reduce((acc, element) => {
             return acc + `
-                <div class="card-episodio">
+                <div class="card-episodio" id="cardE${element.id}">
                     <div class="contenido-episodio">
                         <h5>${ element.name || "Nombre no disponible"}</h5>
                         <p>Episodio: ${element.episode || "No disponible"}</p>
@@ -169,7 +169,7 @@ const cardsEpisodios = (data, botonTipo) => {
     else{
         const card = data.reduce((acc, element) => {
             return acc + `
-                <div class="card-episodio">
+                <div class="card-episodio" id="cardE${element.id}">
                     <div class="contenido-episodio">
                         <h5>${ element.name || "Nombre no disponible"}</h5>
                         <p>Episodio: ${element.episode || "No disponible"}</p>
@@ -188,7 +188,7 @@ const cardsEpisodios = (data, botonTipo) => {
 const singleECard = (element,botonTipo) => {
     if (botonTipo === "boton-favorito"){
         const singleE = `
-            <div class="card-episodio">
+            <div class="card-episodio" id="cardE${element.id}">
                 <div class="contenido-episodio">
                     <h5>${ element.name || "Nombre no disponible"}</h5>
                     <p>Episodio: ${element.episode || "No disponible"}</p>
@@ -203,7 +203,7 @@ const singleECard = (element,botonTipo) => {
     }
     else{
         const singleE = `
-            <div class="card-episodio">
+            <div class="card-episodio" id="cardE${element.id}">
                 <div class="contenido-episodio">
                     <h5>${ element.name || "Nombre no disponible"}</h5>
                     <p>Episodio: ${element.episode || "No disponible"}</p>
@@ -222,7 +222,7 @@ const cardsLocaciones = (data, botonTipo) => {
     if (botonTipo==="boton-favorito"){
         const card = data.reduce((acc, element) => {
             return acc + `
-                <div class="card-locacion">
+                <div class="card-locacion" id="cardL${element.id}">
                     <div class="contenido-locacion">
                         <h5>${ element.name || "Nombre no disponible"}</h5>
                         <p>Tipo: ${element.type || "No disponible"}<p>
@@ -239,7 +239,7 @@ const cardsLocaciones = (data, botonTipo) => {
     else{
         const card = data.reduce((acc, element) => {
             return acc + `
-                <div class="card-locacion">
+                <div class="card-locacion" id="cardL${element.id}">
                     <div class="contenido-locacion">
                         <h5>${ element.name || "Nombre no disponible"}</h5>
                         <p>Tipo: ${element.type || "No disponible"}<p>
@@ -258,7 +258,7 @@ const cardsLocaciones = (data, botonTipo) => {
 const singleLCard = (element,botonTipo) => {
     if (botonTipo==="boton-favorito"){
         const singleL = `
-            <div class="card-locacion">
+            <div class="card-locacion" id="cardL${element.id}">
                 <div class="contenido-locacion">
                     <h5>${ element.name || "Nombre no disponible"}</h5>
                     <p>Tipo: ${element.type || "No disponible"}<p>
@@ -273,7 +273,7 @@ const singleLCard = (element,botonTipo) => {
     }
     else{
         const singleL = `
-            <div class="card-locacion">
+            <div class="card-locacion" id="cardL${element.id}">
                 <div class="contenido-locacion">
                     <h5>${ element.name || "Nombre no disponible"}</h5>
                     <p>Tipo: ${element.type || "No disponible"}<p>
@@ -303,3 +303,14 @@ botonModo.addEventListener("click",() => {
     navBar.classList.toggle('navOscuro')
     footer.classList.toggle('footerOscuro')
 })
+
+const cardUnica = (clase) => {
+	const claseCard = document.querySelectorAll(clase)
+	console.log(claseCard)
+	for ( let i = 0; i < claseCard.length; i++){
+		claseCard[i].onclick = (e) => {
+			const id = e.currentTarget.id.slice(5)
+			console.log(id)
+		}
+	}
+}
