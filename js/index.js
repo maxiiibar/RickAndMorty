@@ -100,6 +100,7 @@ fetch (`https://rickandmortyapi.com/api/character`)
 .then ( data => {
     cardsAHtml(data.results.slice(0,10), cardsPersonajes, personajes,"boton-favorito")
     agregarAFav(".boton-personaje","personajes-fav")
+	detalleUnica(".card-personaje","character")
 })
 
 fetch (`https://rickandmortyapi.com/api/episode`)

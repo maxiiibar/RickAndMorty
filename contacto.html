@@ -14,13 +14,20 @@
     />
     <!-- Estilos Propios -->
     <link rel="stylesheet" href="./css/syles.css" />
-    <title>Rick and Morty</title>
+    <title>Contacto</title>
   </head>
   <body>
     <header>
       <nav class="navbar">
-        <a href="index.html" class="logo"><img src="./images/logo.webp" alt="Logo" /></a>
-        <div>
+		<div class="elemento logo">
+			<a href="index.html"><img src="./images/logo.webp" alt="Logo" /></a>
+			<div class="enlaces">
+				<a href="pagina.html" id="pagPersonajes">Personajes</a>
+				<a href="pagina.html" id="pagEpisodios">Episodios</a>
+				<a href="pagina.html" id="pagLocaciones">Locaciones</a>
+			</div>
+		</div>
+        <div class="elemento">
           <form id="barraDeBusqueda">
             <label for="input-busqueda">
               <input
@@ -35,7 +42,7 @@
             </label>
           </form>
         </div>
-        <div class="fav-con">
+        <div class="fav-con elemento">
           <a href="favoritos.html">Favoritos</a>
           <a href="contacto.html">Contacto</a>
           <button id="modoBoton" class="botonClaro">Modo Oscuro</button>
@@ -97,7 +104,7 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/ef84cedd25.js" crossorigin="anonymous"></script>
-    <script src="funciones.js"></script>
-    <script src="contacto.js"></script>
+    <script src="./js/funciones.js"></script>
+    <script src="./js/contacto.js"></script>
   </body>
 </html>

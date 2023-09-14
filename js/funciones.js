@@ -304,13 +304,22 @@ botonModo.addEventListener("click",() => {
     footer.classList.toggle('footerOscuro')
 })
 
-const cardUnica = (clase) => {
+/* const generarDetalleP = (element) => {
+	
+} */
+
+const detalleUnica = (clase,objeto) => {
 	const claseCard = document.querySelectorAll(clase)
 	console.log(claseCard)
 	for ( let i = 0; i < claseCard.length; i++){
 		claseCard[i].onclick = (e) => {
 			const id = e.currentTarget.id.slice(5)
-			console.log(id)
+			fetch (`https://rickandmortyapi.com/api/${objeto}/${id}`)
+		.then ( res => res.json() )
+		.then ( data => {
+			console.log(data)
+		})
 		}
 	}
 }
+

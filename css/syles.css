@@ -20,9 +20,13 @@ body{
 	position:fixed;
 	top:0;
 	padding: 0 50px;
+	color:white;
 }
-
-.logo img{
+/* .logo{
+	display:flex;
+	justify-content:center;
+} */
+.logo a img{
 	/* width: 60px; */ 
 	width: 80px;
 	border-radius: 50%;
@@ -30,9 +34,15 @@ body{
 .fav-con{
 	display: flex;
 	align-items: center;
-	gap:20px;
+	gap:15px;
+	justify-content:center;
 }
-.fav-con a{
+.logo, .enlaces{
+	display: flex;
+	align-items: center;
+	gap:15px;
+}
+.fav-con a, .enlaces a{
 	text-decoration: none;
 	color: white;
 }
@@ -40,9 +50,9 @@ body{
 	outline: none;
 	padding: 10px;
 	height:40px;
-	width: 400px;
+	width: 300px;
 	border-radius: 10px;
-	border: 1px solid #39c;
+	border: none;
 }
 .submit-busqueda{
 	border:0;
@@ -52,6 +62,16 @@ body{
 	background-color: #75a83e;
 	color:white;
 	font-size: 15px;
+}
+.elemento{
+	width:400px;
+	
+}
+#barraDeBusqueda{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	gap:5px;
 }
 .presentacion{
 	margin-top:100px;
@@ -110,14 +130,14 @@ footer{
 	text-align: center;
 }
 .vermas{
+	display:inline-block;
+	text-decoration:none;
 	margin: 100px;
-	border: 0;
 	background-color: #181818;
 	color: white;
 	font-size: 20px;
 	font-weight: 700;
-	width: 125px;
-	height: 50px;
+	padding: 10px;
 	margin-bottom: 50px;
 }
 .vermas:hover{
@@ -238,7 +258,7 @@ footer{
 .vacio p{
 	font-size: 25px;
 }
-.main-contacto{
+.main-contacto, .main-pagina{
 	margin-top:100px;
 	display: flex;
 	flex-direction: column;
