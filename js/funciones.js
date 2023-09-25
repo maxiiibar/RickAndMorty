@@ -73,7 +73,7 @@ const cardsPersonajes = (data, botonTipo) => {
                     <div class="contenido-personaje">
                         <h5>${ element.name || "Nombre no disponible"}</h5>
                         <p>Especie: ${element.species || "No disponible"}</p>
-                        <p>Genero: ${element.genre || "No disponible"}</p>
+                        <p>Genero: ${element.gender || "No disponible"}</p>
                         <p>Estado: ${element.status || "No disponible"}</p>
                     </div>
                     <div class="fav-personaje">
@@ -94,7 +94,7 @@ const cardsPersonajes = (data, botonTipo) => {
                     <div class="contenido-personaje">
                         <h5>${ element.name || "Nombre no disponible"}</h5>
                         <p>Especie: ${element.species || "No disponible"}</p>
-                        <p>Genero: ${element.genre || "No disponible"}</p>
+                        <p>Genero: ${element.gender || "No disponible"}</p>
                         <p>Estado: ${element.status || "No disponible"}</p>
                     </div>
                     <div class="fav-personaje">
@@ -315,10 +315,10 @@ const detalleUnica = (clase,objeto) => {
 		claseCard[i].onclick = (e) => {
 			const id = e.currentTarget.id.slice(5)
 			fetch (`https://rickandmortyapi.com/api/${objeto}/${id}`)
-		.then ( res => res.json() )
-		.then ( data => {
-			console.log(data)
-		})
+            .then ( res => res.json() )
+            .then ( data => {
+                console.log(data)
+            })
 		}
 	}
 }

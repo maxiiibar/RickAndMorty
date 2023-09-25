@@ -95,12 +95,31 @@ barraBusqueda.addEventListener("submit",(event)=>{
 	})
 })
 
+const pagPersonajes = document.querySelectorAll("#pagPersonajes")
+const pagLocaciones = document.querySelectorAll("#pagLocaciones")
+const pagEpisodios = document.querySelectorAll("#pagEpisodios")
+pagPersonajes.forEach( element => {
+	element.onclick = () => {
+		localStorage.setItem("categoria",JSON.stringify("personajes"))
+	}
+})
+pagLocaciones.forEach( element => {
+	element.onclick = () => {
+		localStorage.setItem("categoria",JSON.stringify("locaciones"))
+	}
+})
+pagEpisodios.forEach( element => {
+	element.onclick = () => {
+		localStorage.setItem("categoria",JSON.stringify("episodios"))
+	}
+})
+
 fetch (`https://rickandmortyapi.com/api/character`)
 .then ( res => res.json() )
 .then ( data => {
     cardsAHtml(data.results.slice(0,10), cardsPersonajes, personajes,"boton-favorito")
     agregarAFav(".boton-personaje","personajes-fav")
-	detalleUnica(".card-personaje","character")
+	/* detalleUnica(".card-personaje","character") */
 })
 
 fetch (`https://rickandmortyapi.com/api/episode`)

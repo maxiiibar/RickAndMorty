@@ -1,3 +1,22 @@
+const pagPersonajes = document.querySelectorAll("#pagPersonajes")
+const pagLocaciones = document.querySelectorAll("#pagLocaciones")
+const pagEpisodios = document.querySelectorAll("#pagEpisodios")
+pagPersonajes.forEach( element => {
+	element.onclick = () => {
+		localStorage.setItem("categoria",JSON.stringify("personajes"))
+	}
+})
+pagLocaciones.forEach( element => {
+	element.onclick = () => {
+		localStorage.setItem("categoria",JSON.stringify("locaciones"))
+	}
+})
+pagEpisodios.forEach( element => {
+	element.onclick = () => {
+		localStorage.setItem("categoria",JSON.stringify("episodios"))
+	}
+})
+
 const mainCont = document.querySelector(".main-contacto")
 
 const barraBusqueda = document.querySelector("#barraDeBusqueda")
