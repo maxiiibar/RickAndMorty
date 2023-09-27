@@ -19,46 +19,8 @@ pagEpisodios.forEach( element => {
 
 const cat = JSON.parse(localStorage.getItem("categoria"))
 const seccionPag = document.querySelector(".seccionPagina")
-if (cat==="personajes"){
-    seccionPag.innerHTML = `
-        <h2>PERSONAJES</h2>
-        <div class="contenedor"></div>
-    `
-    const contenedorPag = document.querySelector(".contenedor")
-    fetch (`https://rickandmortyapi.com/api/character/?page=1`)
-    .then ( res => res.json() )
-    .then ( data => {
-        console.log(data)
-        cardsAHtml(data.results, cardsPersonajes, contenedorPag,"boton-favorito")
-        agregarAFav(".boton-personaje","personajes-fav")
-    })
-}
-else if (cat==="episodios"){
-    seccionPag.innerHTML = `
-        <h2>EPISODIOS</h2>
-        <div class="contenedor"></div>
-    `
-    const contenedorPag = document.querySelector(".contenedor")
-    fetch (`https://rickandmortyapi.com/api/episode/?page=1`)
-    .then ( res => res.json() )
-    .then ( data => {
-        cardsAHtml(data.results, cardsEpisodios, contenedorPag,"boton-favorito")
-        agregarAFav(".boton-episodio","episodios-fav")
-    })
-}
-else if (cat==="locaciones"){
-    seccionPag.innerHTML = `
-        <h2>LOCACIONES</h2>
-        <div class="contenedor"></div>
-    `
-    const contenedorPag = document.querySelector(".contenedor")
-    fetch (`https://rickandmortyapi.com/api/location/?page=1`)
-    .then ( res => res.json() )
-    .then ( data => {
-        cardsAHtml(data.results, cardsLocaciones, contenedorPag,"boton-favorito")
-        agregarAFav(".boton-locacion","locaciones-fav")
-    })
-}
+
+traerData(seccionPag,cat)
 
 const mainPag = document.querySelector(".main-pagina")
 const barraBusqueda = document.querySelector("#barraDeBusqueda")
@@ -145,3 +107,43 @@ barraBusqueda.addEventListener("submit",(event)=>{
         agregarAFav(".boton-locacion","locaciones-fav")
 	})
 })
+
+const botonPrev = document.querySelector("#prev")
+const botonNext = document.querySelector("#next")
+const numeroPag = document.querySelector("#contador")
+
+const revisarPagina = (elemento) => {
+	botonPrev.classList.toggle("escondido", elemento.innerHTML==1)
+	if(elemento.innerHTML==1){
+		botonPrev.disabled=true
+	}
+	else{
+		botonPrev.disabled=false
+	}
+}
+const revisarUltima = (elemento,nro) => {
+	botonNext.classList.toggle("escondido", elemento.innerHTML==nro)
+	if(elemento.innerHTML==nro){
+		botonNext.disabled=true
+	}
+	else{
+		botonNext.disabled=false
+	}
+}
+revisarPagina(numeroPag)
+botonNext.onclick = () => {
+	const numero = new Number (numeroPag.innerHTML)
+	const final = traerData(seccionPag,cat,numero + 1)
+	const indice = document.querySelector("#contador")
+	indice.innerHTML=`${numero+1}`
+	revisarPagina(indice)
+	revisarUltima(indice,final)
+}
+botonPrev.onclick = () => {
+	const numero = new Number (numeroPag.innerHTML)
+	const final = traerData(seccionPag,cat,numero-1)
+	const indice = document.querySelector("#contador")
+	indice.innerHTML=`${numero-1}`
+	revisarPagina(indice)
+	revisarUltima(indice,final)
+}

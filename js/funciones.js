@@ -323,3 +323,47 @@ const detalleUnica = (clase,objeto) => {
 	}
 }
 
+const traerData = (contenedor, memoria,numeroPag) => {
+    if (memoria==="personajes"){
+        contenedor.innerHTML = `
+            <h2>PERSONAJES</h2>
+            <div class="contenedor"></div>
+        `
+        const contenedorPag = document.querySelector(".contenedor")
+        fetch (`https://rickandmortyapi.com/api/character/?page=${(numeroPag||1)}`)
+        .then ( res => res.json() )
+        .then ( data => {
+            cardsAHtml(data.results, cardsPersonajes, contenedorPag,"boton-favorito")
+            agregarAFav(".boton-personaje","personajes-fav")
+        })
+        return 42
+    }
+    else if (memoria==="episodios"){
+        contenedor.innerHTML = `
+            <h2>EPISODIOS</h2>
+            <div class="contenedor"></div>
+        `
+        const contenedorPag = document.querySelector(".contenedor")
+        fetch (`https://rickandmortyapi.com/api/episode/?page=${(numeroPag||1)}`)
+        .then ( res => res.json() )
+        .then ( data => {
+            cardsAHtml(data.results, cardsEpisodios, contenedorPag,"boton-favorito")
+            agregarAFav(".boton-episodio","episodios-fav")
+        })
+        return 3
+    }
+    else if (memoria==="locaciones"){
+        contenedor.innerHTML = `
+            <h2>LOCACIONES</h2>
+            <div class="contenedor"></div>
+        `
+        const contenedorPag = document.querySelector(".contenedor")
+        fetch (`https://rickandmortyapi.com/api/location/?page=${(numeroPag||1)}`)
+        .then ( res => res.json() )
+        .then ( data => {
+            cardsAHtml(data.results, cardsLocaciones, contenedorPag,"boton-favorito")
+            agregarAFav(".boton-locacion","locaciones-fav")
+        })
+        return 7
+    }
+}
