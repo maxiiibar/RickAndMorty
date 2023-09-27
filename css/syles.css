@@ -163,9 +163,6 @@ footer{
 	border-radius: 5px;
 	background-color: white;
 }
-.card-personaje:hover{
-	cursor:pointer;
-}
 .contenido-personaje{
 	height: 100px;
 }

@@ -304,11 +304,7 @@ botonModo.addEventListener("click",() => {
     footer.classList.toggle('footerOscuro')
 })
 
-/* const generarDetalleP = (element) => {
-	
-} */
-
-const detalleUnica = (clase,objeto) => {
+/* const detalleUnica = (clase,objeto) => {
 	const claseCard = document.querySelectorAll(clase)
 	console.log(claseCard)
 	for ( let i = 0; i < claseCard.length; i++){
@@ -321,7 +317,7 @@ const detalleUnica = (clase,objeto) => {
             })
 		}
 	}
-}
+} */
 
 const traerData = (contenedor, memoria,numeroPag) => {
     if (memoria==="personajes"){
