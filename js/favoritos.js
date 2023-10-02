@@ -1,3 +1,6 @@
+const temaPag = JSON.parse(localStorage.getItem("modo"))
+cambiarTema(temaPag)
+
 const pagPersonajes = document.querySelectorAll("#pagPersonajes")
 const pagLocaciones = document.querySelectorAll("#pagLocaciones")
 const pagEpisodios = document.querySelectorAll("#pagEpisodios")

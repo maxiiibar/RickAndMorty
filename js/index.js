@@ -1,3 +1,9 @@
+const temaPag = JSON.parse(localStorage.getItem("modo"))
+if (!temaPag){
+	localStorage.setItem("modo",JSON.stringify("claro"))
+}
+cambiarTema(temaPag)
+
 const personajes = document.querySelector(".personajes")
 const episodios = document.querySelector(".episodios")
 const locaciones = document.querySelector(".locaciones")
