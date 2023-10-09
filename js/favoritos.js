@@ -1,24 +1,13 @@
-const temaPag = JSON.parse(localStorage.getItem("modo"))
+let temaPag = JSON.parse(localStorage.getItem("modo"))
 cambiarTema(temaPag)
 
-const pagPersonajes = document.querySelectorAll("#pagPersonajes")
-const pagLocaciones = document.querySelectorAll("#pagLocaciones")
-const pagEpisodios = document.querySelectorAll("#pagEpisodios")
-pagPersonajes.forEach( element => {
-	element.onclick = () => {
-		localStorage.setItem("categoria",JSON.stringify("personajes"))
-	}
-})
-pagLocaciones.forEach( element => {
-	element.onclick = () => {
-		localStorage.setItem("categoria",JSON.stringify("locaciones"))
-	}
-})
-pagEpisodios.forEach( element => {
-	element.onclick = () => {
-		localStorage.setItem("categoria",JSON.stringify("episodios"))
-	}
-})
+const pagPersonajes = document.querySelector("#pagPersonajes")
+const pagLocaciones = document.querySelector("#pagLocaciones")
+const pagEpisodios = document.querySelector("#pagEpisodios")
+
+pagPersonajes.onclick = () => {localStorage.setItem("categoria",JSON.stringify("personajes"))}
+pagLocaciones.onclick = () => {localStorage.setItem("categoria",JSON.stringify("locaciones"))}
+pagEpisodios.onclick = () => {localStorage.setItem("categoria",JSON.stringify("episodios"))}
 
 const personajesFavoritos = document.querySelector(".personajes-favoritos");
 const episodiosFavoritos = document.querySelector(".episodios-favoritos");
@@ -27,90 +16,8 @@ const mainFav = document.querySelector(".main-favoritos")
 
 const barraBusqueda = document.querySelector("#barraDeBusqueda")
 const inputBusqueda = document.querySelector("#input-busqueda")
-barraBusqueda.addEventListener("submit",(event)=>{
-	event.preventDefault()
-	mainFav.innerHTML = `
-		<section class="encontrados container">
-			<h3>PERSONAJES</h3>
-			<div class="boxPersonajes"></div>
-		</section>
-		<section class="encontrados container">
-			<h3>EPISODIOS</h3>
-			<div class="boxEpisodios"></div>
-		</section>
-		<section class="encontrados container">
-			<h3>LOCACIONES</h3>
-			<div class="boxLocaciones"></div>
-		</section>
-	`
-	const contenedorPersonajes = document.querySelector(".boxPersonajes")
-	const contenedorEpisodios = document.querySelector(".boxEpisodios")
-	const contenedorLocaciones = document.querySelector(".boxLocaciones")
-	
-	
-	fetch (`https://rickandmortyapi.com/api/character/?name=${inputBusqueda.value.toLowerCase()}`)
-	.then ( res => res.json() )
-	.then ( data => {
-		if(data.error){
-			contenedorPersonajes.innerHTML = `
-            <div class="vacio">
-                <p>No se encontraron personajes con este nombre</p>
-            </div>  
-            `
-		}
-		else{
-			if (data.results.length===1){
-				cardsAHtml(data.results[0], singlePCard, contenedorPersonajes,"boton-favorito")
-			}
-			else{
-				cardsAHtml(data.results,cardsPersonajes,contenedorPersonajes,"boton-favorito")
-			}
-		}
-        agregarAFav(".boton-personaje","personajes-fav")
-	})
-	
-	fetch (`https://rickandmortyapi.com/api/episode/?name=${inputBusqueda.value.toLowerCase()}`)
-	.then ( res => res.json() )
-	.then ( data => {
-		if(data.error){
-			contenedorEpisodios.innerHTML = `
-            <div class="vacio">
-                <p>No se encontraron episodios con este nombre</p>
-            </div>  
-            `
-		}
-		else{
-			if (data.results.length===1){
-				cardsAHtml(data.results[0], singleECard, contenedorEpisodios,"boton-favorito")
-			}
-			else{
-				cardsAHtml(data.results,cardsEpisodios,contenedorEpisodios,"boton-favorito")
-			}
-		}
-        agregarAFav(".boton-episodio","episodios-fav")
-	})
-	
-	fetch (`https://rickandmortyapi.com/api/location/?name=${inputBusqueda.value.toLowerCase()}`)
-	.then ( res => res.json() )
-	.then ( data => {
-		if(data.error){
-			contenedorLocaciones.innerHTML = `
-            <div class="vacio">
-                <p>No se encontraron locaciones con este nombre</p>
-            </div>  
-            `
-		}
-		else{
-			if (data.results.length===1){
-				cardsAHtml(data.results[0], singleLCard, contenedorLocaciones,"boton-favorito")
-			}
-			else{
-				cardsAHtml(data.results,cardsLocaciones,contenedorLocaciones,"boton-favorito")
-			}
-		}
-        agregarAFav(".boton-locacion","locaciones-fav")
-	})
-})
+
+accionBusqueda(mainFav,barraBusqueda,inputBusqueda)
 
 const eliminarDeFav = (tipo, funcion, funcionSingular, contenedor, claseBoton, storage, botonTipo) => {
 	const cards = document.querySelectorAll(claseBoton)
@@ -131,17 +38,33 @@ const crearCardsFav = (tipo, funcion, funcionSingular, contenedor, claseBoton, s
         if (claseBoton === ".boton-locacion"){
             contenedor.innerHTML = `
                 <div class="vacio">
-                    <h3>No tienes ${claseBoton.slice(7)}es favoritas. <a href="index.html">Añadir</a></h3>
+                    <h3 class="textoVacio">No tienes locaciones favoritas. <a id="irALocaciones" href="pagina.html">Añadir</a></h3>
                 </div>            
+            `
+        }
+        else if(claseBoton==".boton-personaje"){
+            contenedor.innerHTML = `
+            <div class="vacio">
+                <h3 class="textoVacio">No tienes personajes favoritos. <a id="irAPersonajes" href="pagina.html">Añadir</a></h3>
+            </div>  
             `
         }
         else{
             contenedor.innerHTML = `
             <div class="vacio">
-                <h3>No tienes ${claseBoton.slice(7)}s favoritos. <a href="index.html">Añadir</a></h3>
+                <h3 class="textoVacio">No tienes episodios favoritos. <a id="irAEpisodios" href="pagina.html">Añadir</a></h3>
             </div>  
             `
         }
+        const añadirP = document.getElementById("irAPersonajes")
+        const añadirE = document.getElementById("irAEpisodios")
+        const añadirL = document.getElementById("irALocaciones")
+        añadirP.onclick = () => {localStorage.setItem("categoria",JSON.stringify("personajes"))}
+        añadirL.onclick = () => {localStorage.setItem("categoria",JSON.stringify("locaciones"))}
+        añadirE.onclick = () => {localStorage.setItem("categoria",JSON.stringify("episodios"))}
+       
+        temaPag = JSON.parse(localStorage.getItem("modo"))
+        cambiarTema(temaPag)
     }
 	else{
         if (memoriaFav.length===1){

@@ -143,7 +143,7 @@ footer{
 .vermas:hover{
 	color: rgb(195, 195, 195);
 }
-.seccion h2{
+.titulo{
 	margin: 50px 0 70px 0;
 	font-size: 50px;
 	font-weight: 700;
@@ -254,6 +254,12 @@ footer{
 }
 .vacio p{
 	font-size: 25px;
+}
+.vacio a {
+	color:#75a83e;
+}
+.vacio a:hover {
+	color:#5e8832;
 }
 .main-contacto, .main-pagina{
 	margin-top:100px;
