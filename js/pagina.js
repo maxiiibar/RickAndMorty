@@ -39,7 +39,13 @@ const botonNext = document.querySelector("#next")
 const numeroPag = document.querySelector("#contador")
 
 const revisarPagina = (elemento) => {
-	botonPrev.classList.toggle("escondido", elemento.innerHTML==1)
+	temaPag = JSON.parse(localStorage.getItem("modo"))
+	if (temaPag=="oscuro"){
+		botonPrev.classList.toggle("escondidoO", elemento.innerHTML==1)
+	}
+	else{
+		botonPrev.classList.toggle("escondido", elemento.innerHTML==1)
+	}
 	if(elemento.innerHTML==1){
 		botonPrev.disabled=true
 	}
@@ -48,7 +54,13 @@ const revisarPagina = (elemento) => {
 	}
 }
 const revisarUltima = (elemento,nro) => {
-	botonNext.classList.toggle("escondido", elemento.innerHTML==nro)
+	temaPag = JSON.parse(localStorage.getItem("modo"))
+	if (temaPag=="oscuro"){
+		botonNext.classList.toggle("escondidoO", elemento.innerHTML==nro)
+	}
+	else{
+		botonNext.classList.toggle("escondido", elemento.innerHTML==nro)
+	}
 	if(elemento.innerHTML==nro){
 		botonNext.disabled=true
 	}

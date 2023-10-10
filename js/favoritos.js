@@ -56,15 +56,12 @@ const crearCardsFav = (tipo, funcion, funcionSingular, contenedor, claseBoton, s
             </div>  
             `
         }
-        const añadirP = document.getElementById("irAPersonajes")
-        const añadirE = document.getElementById("irAEpisodios")
-        const añadirL = document.getElementById("irALocaciones")
-        añadirP.onclick = () => {localStorage.setItem("categoria",JSON.stringify("personajes"))}
+        /* añadirP.onclick = () => {localStorage.setItem("categoria",JSON.stringify("personajes"))}
         añadirL.onclick = () => {localStorage.setItem("categoria",JSON.stringify("locaciones"))}
         añadirE.onclick = () => {localStorage.setItem("categoria",JSON.stringify("episodios"))}
        
         temaPag = JSON.parse(localStorage.getItem("modo"))
-        cambiarTema(temaPag)
+        cambiarTema(temaPag) */
     }
 	else{
         if (memoriaFav.length===1){
@@ -92,3 +89,15 @@ crearCardsFav("character", cardsPersonajes, singlePCard, personajesFavoritos, ".
 crearCardsFav("episode", cardsEpisodios, singleECard, episodiosFavoritos, ".boton-episodio", "episodios-fav", "boton-eliminar")
 crearCardsFav("location", cardsLocaciones, singleLCard, locacionesFavoritas, ".boton-locacion", "locaciones-fav", "boton-eliminar")
 
+const añadirE = document.getElementById("irAEpisodios")
+const añadirP = document.getElementById("irAPersonajes")
+const añadirL = document.getElementById("irALocaciones")
+if (añadirE){
+    añadirE.onclick = () => {localStorage.setItem("categoria",JSON.stringify("episodios"))}
+}
+if (añadirL){
+    añadirL.onclick = () => {localStorage.setItem("categoria",JSON.stringify("locaciones"))}
+}
+if(añadirP){
+    añadirP.onclick = () => {localStorage.setItem("categoria",JSON.stringify("personajes"))}
+}

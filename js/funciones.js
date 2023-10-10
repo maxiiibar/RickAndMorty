@@ -465,11 +465,20 @@ const cambiarTema = (tema) => {
     const titulos = document.querySelectorAll(".titulo")
     const subtitulos = document.querySelectorAll('.subtitulo')
     const textosVacios = document.querySelectorAll('.textoVacio')
+    const verMas = document.querySelectorAll('.vermas')
+    const contador = document.getElementById('contador')
+    const flechas = document.querySelectorAll('.flecha')
+    const escondido = document.querySelector('.escondido')
     if (tema == "oscuro") {
         botonModo.classList.add('botonOscuro')
         body.classList.add('bodyOscuro')
         navBar.classList.add('navOscuro')
-        footer.classList.add('footerOscuro')
+        footer.classList.add('navOscuro')
+        contador.classList.add('letrasEnOscuro')
+        if (escondido){
+            escondido.classList.remove('escondido')
+            escondido.classList.add('escondidoO')
+        }
         for (let i = 0; i<titulos.length; i++){
             titulos[i].classList.add('letrasEnOscuro')
         }
@@ -479,12 +488,23 @@ const cambiarTema = (tema) => {
         for (let i = 0; i<textosVacios.length; i++){
             textosVacios[i].classList.add('letrasEnOscuro')
         }
+        for (let i = 0; i<verMas.length; i++){
+            verMas[i].classList.add('verMasOscuro')
+        }
+        for (let i = 0; i<flechas.length; i++){
+            flechas[i].classList.add('flechasEnOscuro')
+        }
     }
     else if (tema == "claro") {
         botonModo.classList.remove('botonOscuro')
         body.classList.remove('bodyOscuro')
         navBar.classList.remove('navOscuro')
-        footer.classList.remove('footerOscuro')
+        footer.classList.remove('navOscuro')
+        contador.classList.remove('letrasEnOscuro')
+        if (escondido){
+            escondido.classList.remove('escondidoO')
+            escondido.classList.add('escondido')
+        }
         for (let i = 0; i<titulos.length; i++){
             titulos[i].classList.remove('letrasEnOscuro')
         }
@@ -493,6 +513,12 @@ const cambiarTema = (tema) => {
         }
         for (let i = 0; i<textosVacios.length; i++){
             textosVacios[i].classList.remove('letrasEnOscuro')
+        }
+        for (let i = 0; i<verMas.length; i++){
+            verMas[i].classList.remove('verMasOscuro')
+        }
+        for (let i = 0; i<flechas.length; i++){
+            flechas[i].classList.remove('flechasEnOscuro')
         }
     }
 }

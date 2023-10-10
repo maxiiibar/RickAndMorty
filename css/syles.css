@@ -140,6 +140,9 @@ footer{
 	padding: 10px;
 	margin-bottom: 50px;
 }
+.verMasOscuro {
+	background-color:#5e8832;
+}
 .vermas:hover{
 	color: rgb(195, 195, 195);
 }
@@ -353,14 +356,19 @@ footer{
 	background-color:#4a6b28;
 }
 .bodyOscuro{
-	background-color: #141714;
+	background-color: #1d221d;
 }
 .navOscuro{
-	background-color: rgb(3, 9, 3);
-}
-.footerOscuro{
-	background-color: rgb(3, 9, 3);
+	background-color: rgb(65, 84, 65);
 }
 .letrasEnOscuro{
 	color: white;
+}
+.flechasEnOscuro{
+	background-color: #75a83e;
+	color:white;
+}
+.escondidoO{
+	background-color: #1d221d;
+	color: #1d221d;
 }
