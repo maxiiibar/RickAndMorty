@@ -469,6 +469,7 @@ const cambiarTema = (tema) => {
     const contador = document.getElementById('contador')
     const flechas = document.querySelectorAll('.flecha')
     const escondido = document.querySelector('.escondido')
+    const escondidoO = document.querySelector('.escondidoO')
     if (tema == "oscuro") {
         botonModo.classList.add('botonOscuro')
         body.classList.add('bodyOscuro')
@@ -501,9 +502,9 @@ const cambiarTema = (tema) => {
         navBar.classList.remove('navOscuro')
         footer.classList.remove('navOscuro')
         contador.classList.remove('letrasEnOscuro')
-        if (escondido){
-            escondido.classList.remove('escondidoO')
-            escondido.classList.add('escondido')
+        if (escondidoO){
+            escondidoO.classList.remove('escondidoO')
+            escondidoO.classList.add('escondido')
         }
         for (let i = 0; i<titulos.length; i++){
             titulos[i].classList.remove('letrasEnOscuro')
