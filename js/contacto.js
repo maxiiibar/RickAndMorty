@@ -4,20 +4,20 @@ cambiarTema(temaPag)
 const pagPersonajes = document.querySelectorAll("#pagPersonajes")
 const pagLocaciones = document.querySelectorAll("#pagLocaciones")
 const pagEpisodios = document.querySelectorAll("#pagEpisodios")
-pagPersonajes.forEach( element => {
-	element.onclick = () => {
-		localStorage.setItem("categoria",JSON.stringify("personajes"))
-	}
+pagPersonajes.forEach(element => {
+    element.onclick = () => {
+        localStorage.setItem("categoria", JSON.stringify("personajes"))
+    }
 })
-pagLocaciones.forEach( element => {
-	element.onclick = () => {
-		localStorage.setItem("categoria",JSON.stringify("locaciones"))
-	}
+pagLocaciones.forEach(element => {
+    element.onclick = () => {
+        localStorage.setItem("categoria", JSON.stringify("locaciones"))
+    }
 })
-pagEpisodios.forEach( element => {
-	element.onclick = () => {
-		localStorage.setItem("categoria",JSON.stringify("episodios"))
-	}
+pagEpisodios.forEach(element => {
+    element.onclick = () => {
+        localStorage.setItem("categoria", JSON.stringify("episodios"))
+    }
 })
 
 const mainCont = document.querySelector(".main-contacto")
@@ -36,48 +36,48 @@ const mensajeValido = document.querySelector("#mensajeValido")
 const formulario = document.querySelector(".formCon")
 const botonSubmit = document.querySelector("submit-form")
 
-let habilitado = false 
+let habilitado = false
 
-inputMail.addEventListener("input",(() => {
+inputMail.addEventListener("input", (() => {
     const arroba = inputMail.value.indexOf('@')
-    if (arroba === -1){
+    if (arroba === -1) {
         mensajeError.classList.remove("hidden")
         mensajeValido.classList.add("hidden")
-        habilitado=false
+        habilitado = false
     }
     else {
-        const str = inputMail.value.slice(0,arroba)
-        if (str.length<3){
+        const str = inputMail.value.slice(0, arroba)
+        if (str.length < 3) {
             mensajeError.classList.remove("hidden")
             mensajeValido.classList.add("hidden")
-            habilitado=false
+            habilitado = false
         }
-        else{
+        else {
             mensajeError.classList.add("hidden")
             mensajeValido.classList.remove("hidden")
-            habilitado=true
+            habilitado = true
         }
     }
 }))
 
 
-formulario.addEventListener("submit",(event)=>{
+formulario.addEventListener("submit", (event) => {
     event.preventDefault()
-    if (habilitado && inputNombre.value!=="" && inputApellido.value!==""){
+    if (habilitado && inputNombre.value !== "" && inputApellido.value !== "") {
         Swal.fire({
             icon: 'success',
             title: 'Perfecto',
             text: 'Te registraste con éxito',
             showConfirmButton: false,
-          })
+        })
     }
-    else{
+    else {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: 'Algo ha ido mal!',
             showConfirmButton: false,
-          })
+        })
     }
 })
 

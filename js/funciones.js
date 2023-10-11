@@ -293,14 +293,14 @@ const cardsAHtml = (data, funcion, contenedor, botonTipo) => {
 }
 
 const accionBusqueda = (mainContenedor, barraBusqueda, inputBusqueda, presentacion, footer) => {
-    barraBusqueda.addEventListener("submit",(event)=>{
+    barraBusqueda.addEventListener("submit", (event) => {
         event.preventDefault()
-        if (presentacion){
-            presentacion.innerHTML=""
+        if (presentacion) {
+            presentacion.innerHTML = ""
             presentacion.classList.remove("presentacion");
-	        presentacion.classList.add("nuevoHeight")
+            presentacion.classList.add("nuevoHeight")
         }
-        if (footer){
+        if (footer) {
             footer.classList.remove("footerContacto")
         }
         mainContenedor.innerHTML = `
@@ -321,80 +321,80 @@ const accionBusqueda = (mainContenedor, barraBusqueda, inputBusqueda, presentaci
         const contenedorPersonajes = document.querySelector(".boxPersonajes")
         const contenedorEpisodios = document.querySelector(".boxEpisodios")
         const contenedorLocaciones = document.querySelector(".boxLocaciones")
-        fetch (`https://rickandmortyapi.com/api/character/?name=${inputBusqueda.value.toLowerCase()}`)
-        .then ( res => res.json() )
-        .then ( data => {
-            if(data.error){
-                contenedorPersonajes.innerHTML = `
+        fetch(`https://rickandmortyapi.com/api/character/?name=${inputBusqueda.value.toLowerCase()}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.error) {
+                    contenedorPersonajes.innerHTML = `
                 <div class="vacio">
                     <p class="textoVacio">No se encontraron personajes con este nombre</p>
                 </div>  
                 `
-                let temaPag = JSON.parse(localStorage.getItem("modo"))
-                cambiarTema(temaPag)
-            }
-            else{
-                if (data.results.length===1){
-                    cardsAHtml(data.results[0], singlePCard, contenedorPersonajes,"boton-favorito")
+                    let temaPag = JSON.parse(localStorage.getItem("modo"))
+                    cambiarTema(temaPag)
                 }
-                else{
-                    cardsAHtml(data.results,cardsPersonajes,contenedorPersonajes,"boton-favorito")
+                else {
+                    if (data.results.length === 1) {
+                        cardsAHtml(data.results[0], singlePCard, contenedorPersonajes, "boton-favorito")
+                    }
+                    else {
+                        cardsAHtml(data.results, cardsPersonajes, contenedorPersonajes, "boton-favorito")
+                    }
+                    let temaPag = JSON.parse(localStorage.getItem("modo"))
+                    cambiarTema(temaPag)
                 }
-                let temaPag = JSON.parse(localStorage.getItem("modo"))
-                cambiarTema(temaPag)
-            }
-            agregarAFav(".boton-personaje","personajes-fav")
-        })
-        
-        fetch (`https://rickandmortyapi.com/api/episode/?name=${inputBusqueda.value.toLowerCase()}`)
-        .then ( res => res.json() )
-        .then ( data => {
-            if(data.error){
-                contenedorEpisodios.innerHTML = `
+                agregarAFav(".boton-personaje", "personajes-fav")
+            })
+
+        fetch(`https://rickandmortyapi.com/api/episode/?name=${inputBusqueda.value.toLowerCase()}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.error) {
+                    contenedorEpisodios.innerHTML = `
                 <div class="vacio">
                     <p class="textoVacio">No se encontraron episodios con este nombre</p>
                 </div>  
                 `
-                let temaPag = JSON.parse(localStorage.getItem("modo"))
-                cambiarTema(temaPag)
-            }
-            else{
-                if (data.results.length===1){
-                    cardsAHtml(data.results[0], singleECard, contenedorEpisodios,"boton-favorito")
+                    let temaPag = JSON.parse(localStorage.getItem("modo"))
+                    cambiarTema(temaPag)
                 }
-                else{
-                    cardsAHtml(data.results,cardsEpisodios,contenedorEpisodios,"boton-favorito")
+                else {
+                    if (data.results.length === 1) {
+                        cardsAHtml(data.results[0], singleECard, contenedorEpisodios, "boton-favorito")
+                    }
+                    else {
+                        cardsAHtml(data.results, cardsEpisodios, contenedorEpisodios, "boton-favorito")
+                    }
+                    let temaPag = JSON.parse(localStorage.getItem("modo"))
+                    cambiarTema(temaPag)
                 }
-                let temaPag = JSON.parse(localStorage.getItem("modo"))
-                cambiarTema(temaPag)
-            }
-            agregarAFav(".boton-episodio","episodios-fav")
-        })
-        
-        fetch (`https://rickandmortyapi.com/api/location/?name=${inputBusqueda.value.toLowerCase()}`)
-        .then ( res => res.json() )
-        .then ( data => {
-            if(data.error){
-                contenedorLocaciones.innerHTML = `
+                agregarAFav(".boton-episodio", "episodios-fav")
+            })
+
+        fetch(`https://rickandmortyapi.com/api/location/?name=${inputBusqueda.value.toLowerCase()}`)
+            .then(res => res.json())
+            .then(data => {
+                if (data.error) {
+                    contenedorLocaciones.innerHTML = `
                 <div class="vacio">
                     <p class="textoVacio">No se encontraron locaciones con este nombre</p>
                 </div>  
                 `
-                let temaPag = JSON.parse(localStorage.getItem("modo"))
-                cambiarTema(temaPag)
-            }
-            else{
-                if (data.results.length===1){
-                    cardsAHtml(data.results[0], singleLCard, contenedorLocaciones,"boton-favorito")
+                    let temaPag = JSON.parse(localStorage.getItem("modo"))
+                    cambiarTema(temaPag)
                 }
-                else{
-                    cardsAHtml(data.results,cardsLocaciones,contenedorLocaciones,"boton-favorito")
+                else {
+                    if (data.results.length === 1) {
+                        cardsAHtml(data.results[0], singleLCard, contenedorLocaciones, "boton-favorito")
+                    }
+                    else {
+                        cardsAHtml(data.results, cardsLocaciones, contenedorLocaciones, "boton-favorito")
+                    }
+                    let temaPag = JSON.parse(localStorage.getItem("modo"))
+                    cambiarTema(temaPag)
                 }
-                let temaPag = JSON.parse(localStorage.getItem("modo"))
-                cambiarTema(temaPag)
-            }
-            agregarAFav(".boton-locacion","locaciones-fav")
-        })
+                agregarAFav(".boton-locacion", "locaciones-fav")
+            })
     })
 }
 
@@ -475,26 +475,26 @@ const cambiarTema = (tema) => {
         body.classList.add('bodyOscuro')
         navBar.classList.add('navOscuro')
         footer.classList.add('navOscuro')
-        if (contador){
+        if (contador) {
             contador.classList.add('letrasEnOscuro')
         }
-        if (escondido){
+        if (escondido) {
             escondido.classList.remove('escondido')
             escondido.classList.add('escondidoO')
         }
-        for (let i = 0; i<titulos.length; i++){
+        for (let i = 0; i < titulos.length; i++) {
             titulos[i].classList.add('letrasEnOscuro')
         }
-        for (let i = 0; i<subtitulos.length; i++){
+        for (let i = 0; i < subtitulos.length; i++) {
             subtitulos[i].classList.add('letrasEnOscuro')
         }
-        for (let i = 0; i<textosVacios.length; i++){
+        for (let i = 0; i < textosVacios.length; i++) {
             textosVacios[i].classList.add('letrasEnOscuro')
         }
-        for (let i = 0; i<verMas.length; i++){
+        for (let i = 0; i < verMas.length; i++) {
             verMas[i].classList.add('verMasOscuro')
         }
-        for (let i = 0; i<flechas.length; i++){
+        for (let i = 0; i < flechas.length; i++) {
             flechas[i].classList.add('flechasEnOscuro')
         }
     }
@@ -503,26 +503,26 @@ const cambiarTema = (tema) => {
         body.classList.remove('bodyOscuro')
         navBar.classList.remove('navOscuro')
         footer.classList.remove('navOscuro')
-        if (contador){
+        if (contador) {
             contador.classList.remove('letrasEnOscuro')
         }
-        if (escondidoO){
+        if (escondidoO) {
             escondidoO.classList.remove('escondidoO')
             escondidoO.classList.add('escondido')
         }
-        for (let i = 0; i<titulos.length; i++){
+        for (let i = 0; i < titulos.length; i++) {
             titulos[i].classList.remove('letrasEnOscuro')
         }
-        for (let i = 0; i<subtitulos.length; i++){
+        for (let i = 0; i < subtitulos.length; i++) {
             subtitulos[i].classList.remove('letrasEnOscuro')
         }
-        for (let i = 0; i<textosVacios.length; i++){
+        for (let i = 0; i < textosVacios.length; i++) {
             textosVacios[i].classList.remove('letrasEnOscuro')
         }
-        for (let i = 0; i<verMas.length; i++){
+        for (let i = 0; i < verMas.length; i++) {
             verMas[i].classList.remove('verMasOscuro')
         }
-        for (let i = 0; i<flechas.length; i++){
+        for (let i = 0; i < flechas.length; i++) {
             flechas[i].classList.remove('flechasEnOscuro')
         }
     }
