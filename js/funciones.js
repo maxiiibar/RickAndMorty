@@ -475,7 +475,9 @@ const cambiarTema = (tema) => {
         body.classList.add('bodyOscuro')
         navBar.classList.add('navOscuro')
         footer.classList.add('navOscuro')
-        contador.classList.add('letrasEnOscuro')
+        if (contador){
+            contador.classList.add('letrasEnOscuro')
+        }
         if (escondido){
             escondido.classList.remove('escondido')
             escondido.classList.add('escondidoO')
@@ -501,7 +503,9 @@ const cambiarTema = (tema) => {
         body.classList.remove('bodyOscuro')
         navBar.classList.remove('navOscuro')
         footer.classList.remove('navOscuro')
-        contador.classList.remove('letrasEnOscuro')
+        if (contador){
+            contador.classList.remove('letrasEnOscuro')
+        }
         if (escondidoO){
             escondidoO.classList.remove('escondidoO')
             escondidoO.classList.add('escondido')
