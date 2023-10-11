@@ -23,14 +23,10 @@ body {
 	top: 0;
 	padding: 0 50px;
 	color: white;
+	z-index: 999; 
 }
 
-/* .logo{
-	display:flex;
-	justify-content:center;
-} */
 .logo a img {
-	/* width: 60px; */
 	width: 80px;
 	border-radius: 50%;
 }
