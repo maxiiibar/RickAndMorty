@@ -17,15 +17,15 @@
 <body>
   <header>
     <nav class="navbar">
-      <div class="elemento logo">
-        <a href="index.html"><img src="./images/logo.webp" alt="Logo" /></a>
-        <div class="enlaces">
-          <a href="pagina.html" class="pagina" id="pagPersonajes">Personajes</a>
-          <a href="pagina.html" class="pagina" id="pagEpisodios">Episodios</a>
-          <a href="pagina.html" class="pagina" id="pagLocaciones">Locaciones</a>
-        </div>
+      <div class="elemento izq">
+        <a class="logo" data-aos="fade-up" href="index.html"><img src="./images/logo.webp" alt="Logo" /></a>
+        <ul data-aos="fade-up" class="enlaces">
+          <li><a href="pagina.html" id="pagPersonajes">Personajes</a></li>
+          <li><a href="pagina.html" id="pagEpisodios">Episodios</a></li>
+          <li><a href="pagina.html" id="pagLocaciones">Locaciones</a></li>
+        </ul>
       </div>
-      <div class="elemento">
+      <div data-aos="fade-up" class="elemento busqueda">
         <form id="barraDeBusqueda">
           <label for="input-busqueda">
             <input type="search" name="Busqueda" placeholder="Buscar nombre" id="input-busqueda" />
@@ -35,9 +35,11 @@
           </label>
         </form>
       </div>
-      <div class="fav-con elemento">
-        <a href="favoritos.html">Favoritos</a>
-        <a href="contacto.html">Contacto</a>
+      <div data-aos="fade-up" class="fav-con elemento">
+        <ul class="enlaces">
+          <li><a href="favoritos.html">Favoritos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
         <button id="modoBoton" class="botonClaro">Modo Oscuro</button>
       </div>
     </nav>
