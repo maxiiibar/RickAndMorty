@@ -72,6 +72,8 @@ revisarPagina(numeroPag)
 botonNext.onclick = () => {
 	const numero = new Number(numeroPag.innerHTML)
 	const final = traerData(seccionPag, cat, numero + 1)
+	temaPag = JSON.parse(localStorage.getItem("modo"))
+    cambiarTema(temaPag)
 	const indice = document.querySelector("#contador")
 	indice.innerHTML = `${numero + 1}`
 	revisarPagina(indice)
@@ -80,6 +82,8 @@ botonNext.onclick = () => {
 botonPrev.onclick = () => {
 	const numero = new Number(numeroPag.innerHTML)
 	const final = traerData(seccionPag, cat, numero - 1)
+	temaPag = JSON.parse(localStorage.getItem("modo"))
+    cambiarTema(temaPag)
 	const indice = document.querySelector("#contador")
 	indice.innerHTML = `${numero - 1}`
 	revisarPagina(indice)

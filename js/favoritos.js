@@ -41,6 +41,8 @@ const crearCardsFav = (tipo, funcion, funcionSingular, contenedor, claseBoton, s
                     <h3 class="textoVacio">No tienes locaciones favoritas. <a id="irALocaciones" href="pagina.html">Añadir</a></h3>
                 </div>            
             `
+            temaPag = JSON.parse(localStorage.getItem("modo"))
+            cambiarTema(temaPag)
         }
         else if (claseBoton == ".boton-personaje") {
             contenedor.innerHTML = `
@@ -48,6 +50,8 @@ const crearCardsFav = (tipo, funcion, funcionSingular, contenedor, claseBoton, s
                 <h3 class="textoVacio">No tienes personajes favoritos. <a id="irAPersonajes" href="pagina.html">Añadir</a></h3>
             </div>  
             `
+            temaPag = JSON.parse(localStorage.getItem("modo"))
+            cambiarTema(temaPag)
         }
         else {
             contenedor.innerHTML = `
@@ -55,6 +59,8 @@ const crearCardsFav = (tipo, funcion, funcionSingular, contenedor, claseBoton, s
                 <h3 class="textoVacio">No tienes episodios favoritos. <a id="irAEpisodios" href="pagina.html">Añadir</a></h3>
             </div>  
             `
+            temaPag = JSON.parse(localStorage.getItem("modo"))
+            cambiarTema(temaPag)
         }
     }
     else {
@@ -65,6 +71,8 @@ const crearCardsFav = (tipo, funcion, funcionSingular, contenedor, claseBoton, s
                     cardsAHtml(data, funcionSingular, contenedor, botonTipo)
                     eliminarDeFav(tipo, funcion, funcionSingular, contenedor, claseBoton, storage, botonTipo)
                 })
+                temaPag = JSON.parse(localStorage.getItem("modo"))
+                cambiarTema(temaPag)
         }
         else {
             let ids = memoriaFav.reduce((acc, element) => { return acc + `${element}, ` }, "")
@@ -75,6 +83,8 @@ const crearCardsFav = (tipo, funcion, funcionSingular, contenedor, claseBoton, s
                     cardsAHtml(data, funcion, contenedor, botonTipo)
                     eliminarDeFav(tipo, funcion, funcionSingular, contenedor, claseBoton, storage, botonTipo)
                 })
+                temaPag = JSON.parse(localStorage.getItem("modo"))
+                cambiarTema(temaPag)
         }
     }
 }
