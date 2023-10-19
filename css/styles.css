@@ -47,12 +47,16 @@ body {
 .izq{
 	display: flex;
 	align-items: center;
+	gap:1rem;
 }
 
 .fav-con a,
 .enlaces a {
 	text-decoration: none;
 	color: white;
+}
+.fav-con a:hover, .enlaces a:hover{
+	color: rgb(203, 203, 203);
 }
 
 
@@ -75,9 +79,6 @@ body {
 	font-size: 15px;
 }
 
-.elemento {
-	width: 400px;
-}
 
 #barraDeBusqueda {
 	display: flex;
