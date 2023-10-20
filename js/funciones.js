@@ -540,3 +540,14 @@ botonModo.onclick = () => {
         cambiarTema("claro")
     }
 }
+
+const favcon = document.querySelector("#fav-con")
+const cerrar = document.querySelector("#cerrar-menu")
+const abrir = document.querySelector("#abrir-menu")
+
+abrir.onclick = () =>{
+    favcon.classList.add("visible")
+}
+cerrar.onclick = () => {
+    favcon.classList.remove("visible")
+}
