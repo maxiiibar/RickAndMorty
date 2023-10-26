@@ -481,7 +481,7 @@ footer {
 		right: 0;
 		background-color: #2b2b2b;
 		padding: 35px 50px;
-		padding-bottom: 1000%;
+		padding-bottom: 100%;
 		box-shadow: 0 0 0 100vmax rgba(0,0,0,.5);
 	}
 	.visible{
