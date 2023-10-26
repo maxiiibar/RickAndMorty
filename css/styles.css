@@ -518,20 +518,56 @@ footer {
 }
 @media only screen and (max-width: 600px){
 	.logo img{
-		width: 70px;
-		height: 70px;
+		width: 60px;
+		height: 60px;
 	}
 	.logo{
-		width: 70px;
-		height: 70px;
+		width: 60px;
+		height: 60px;
 	}
 	#input-busqueda{
-		height: 30px;
-		width: 250px;
+		height: 25px;
+		width: 225px;
+		font-size: 10px;
 	}
 	.submit-busqueda{
-		height: 30px;
-		width: 40px;
+		height: 25px;
+		width: 25px;
 		font-size: 10px;
+		border-radius: 15px ;
+		position: relative;
+	}
+	.fa-magnifying-glass{
+		position: absolute;
+		right: 5px;
+		top:5px;
+		user-select: none;
+  		cursor: pointer;
+	}
+}
+@media only screen and (max-width: 470px){
+	.logo img{
+		width: 40px;
+		height: 40px;
+	}
+	.logo{
+		width: 40px;
+		height: 40px;
+	}
+	#input-busqueda{
+		height: 25px;
+		width: 150px;
+		font-size: 10px;
+	}
+	.submit-busqueda{
+		height: 25px;
+		width: 25px;
+		font-size: 5px;
+		border-radius: 15px ;
+		position: relative;
+	}
+	.abrir-menu{
+		width: 20px;
+		height: 20px;
 	}
 }
