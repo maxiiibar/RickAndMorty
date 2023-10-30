@@ -77,7 +77,7 @@ const cardsPersonajes = (data, botonTipo) => {
                         <p>Estado: ${element.status || "No disponible"}</p>
                     </div>
                     <div class="fav-personaje">
-                        <button class="${botonTipo} boton-personaje" id="fav-${element.id}"><i class="fa-solid fa-star fa-lg"></i></button>
+                        <button class="${botonTipo} boton-personaje" id="fav-${element.id}"><i class="estrella fa-solid fa-star fa-lg"></i></button>
                     </div>
                 </div>
             `
@@ -98,7 +98,7 @@ const cardsPersonajes = (data, botonTipo) => {
                         <p>Estado: ${element.status || "No disponible"}</p>
                     </div>
                     <div class="fav-personaje">
-                        <button class="${botonTipo} boton-personaje" id="fav-${element.id}"><i class="fa-solid fa-trash fa-lg"></i></button>
+                        <button class="${botonTipo} boton-personaje" id="fav-${element.id}"><i class="basura fa-solid fa-trash fa-lg estrella"></i></button>
                     </div>
                 </div>
             `
@@ -121,7 +121,7 @@ const singlePCard = (element, botonTipo) => {
                     <p>Estado: ${element.status || "No disponible"}</p>
                 </div>
                 <div class="fav-personaje">
-                    <button class="${botonTipo} boton-personaje" id="fav-${element.id}"><i class="fa-solid fa-star fa-lg"></i></button>
+                    <button class="${botonTipo} boton-personaje" id="fav-${element.id}"><i class="estrella fa-solid fa-star fa-lg"></i></button>
                 </div>
             </div>
         `
@@ -140,7 +140,7 @@ const singlePCard = (element, botonTipo) => {
                     <p>Estado: ${element.status || "No disponible"}</p>
                 </div>
                 <div class="fav-personaje">
-                    <button class="${botonTipo} boton-personaje" id="fav-${element.id}"><i class="fa-solid fa-trash fa-lg"></i></button>
+                    <button class="${botonTipo} boton-personaje" id="fav-${element.id}"><i class="basura fa-solid fa-trash fa-lg"></i></button>
                 </div>
             </div>
         `
@@ -159,7 +159,7 @@ const cardsEpisodios = (data, botonTipo) => {
                         <p>Fecha de emisión: ${element.air_date || "No disponible"}</p>
                     </div>
                     <div class="fav-episodio">
-                        <button class="${botonTipo} boton-episodio" id="fav-${element.id}"><i class="fa-solid fa-star fa-lg"></i></button>
+                        <button class="${botonTipo} boton-episodio" id="fav-${element.id}"><i class="estrella fa-solid fa-star fa-lg"></i></button>
                     </div>
                 </div>
             `
@@ -176,7 +176,7 @@ const cardsEpisodios = (data, botonTipo) => {
                         <p>Fecha de emisión: ${element.air_date || "No disponible"}</p>
                     </div>
                     <div class="fav-episodio">
-                        <button class="${botonTipo} boton-episodio" id="fav-${element.id}"><i class="fa-solid fa-trash fa-lg"></i></button>
+                        <button class="${botonTipo} boton-episodio" id="fav-${element.id}"><i class="basura fa-solid fa-trash fa-lg"></i></button>
                     </div>
                 </div>
             `
@@ -195,7 +195,7 @@ const singleECard = (element, botonTipo) => {
                     <p>Fecha de emisión: ${element.air_date || "No disponible"}</p>
                 </div>
                 <div class="fav-episodio">
-                    <button class="${botonTipo} boton-episodio" id="fav-${element.id}"><i class="fa-solid fa-star fa-lg"></i></button>
+                    <button class="${botonTipo} boton-episodio" id="fav-${element.id}"><i class="estrella fa-solid fa-star fa-lg"></i></button>
                 </div>
             </div>
         `
@@ -210,7 +210,7 @@ const singleECard = (element, botonTipo) => {
                     <p>Fecha de emisión: ${element.air_date || "No disponible"}</p>
                 </div>
                 <div class="fav-episodio">
-                    <button class="${botonTipo} boton-episodio" id="fav-${element.id}"><i class="fa-solid fa-trash fa-lg"></i></button>
+                    <button class="${botonTipo} boton-episodio" id="fav-${element.id}"><i class="basura fa-solid fa-trash fa-lg"></i></button>
                 </div>
             </div>
         `
@@ -229,7 +229,7 @@ const cardsLocaciones = (data, botonTipo) => {
                         <p>Dimensión: ${element.dimension || "No disponible"}</p>
                     </div>
                     <div class="fav-locacion">
-                        <button class="${botonTipo} boton-locacion" id="fav-${element.id}"><i class="fa-solid fa-star fa-lg"></i></button>
+                        <button class="${botonTipo} boton-locacion" id="fav-${element.id}"><i class="estrella fa-solid fa-star fa-lg"></i></button>
                     </div>
                 </div>
             `
@@ -246,7 +246,7 @@ const cardsLocaciones = (data, botonTipo) => {
                         <p>Dimensión: ${element.dimension || "No disponible"}</p>
                     </div>
                     <div class="fav-locacion">
-                        <button class="${botonTipo} boton-locacion" id="fav-${element.id}"><i class="fa-solid fa-trash fa-lg"></i></button>
+                        <button class="${botonTipo} boton-locacion" id="fav-${element.id}"><i class="basura fa-solid fa-trash fa-lg"></i></button>
                     </div>
                 </div>
             `
@@ -265,7 +265,7 @@ const singleLCard = (element, botonTipo) => {
                     <p>Dimensión: ${element.dimension || "No disponible"}</p>
                 </div>
                 <div class="fav-locacion">
-                    <button class="${botonTipo} boton-locacion" id="fav-${element.id}"><i class="fa-solid fa-star fa-lg"></i></button>
+                    <button class="${botonTipo} boton-locacion" id="fav-${element.id}"><i class="estrella fa-solid fa-star fa-lg"></i></button>
                 </div>
             </div>
         `
@@ -280,7 +280,7 @@ const singleLCard = (element, botonTipo) => {
                     <p>Dimensión: ${element.dimension || "No disponible"}</p>
                 </div>
                 <div class="fav-locacion">
-                    <button class="${botonTipo} boton-locacion" id="fav-${element.id}"><i class="fa-solid fa-trash fa-lg"></i></button>
+                    <button class="${botonTipo} boton-locacion" id="fav-${element.id}"><i class="basura fa-solid fa-trash fa-lg"></i></button>
                 </div>
             </div>
         `
@@ -550,4 +550,15 @@ abrir.onclick = () =>{
 }
 cerrar.onclick = () => {
     favcon.classList.remove("visible")
+}
+
+const verificarAncho = () => {
+    if (screen.width<=1200){
+        const estrella = document.querySelectorAll (".estrella")
+        const basura = document.querySelectorAll (".basura")
+        console.log(estrella)
+        for (let i = 0; i<estrella.length; i++){
+            estrella[i].classList.remove("fa-lg")
+        }
+    }
 }

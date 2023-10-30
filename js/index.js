@@ -54,3 +54,4 @@ fetch(`https://rickandmortyapi.com/api/location`)
 		cardsAHtml(data.results.slice(0, 6), cardsLocaciones, locaciones, "boton-favorito")
 		agregarAFav(".boton-locacion", "locaciones-fav")
 	})
+

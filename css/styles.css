@@ -525,6 +525,39 @@ footer {
 	.seccionuno p, .seccionuno a {
 		font-size: 12px;
 	}
+	.navbar{
+		align-content: center;
+	}
+	.card-personaje {
+		width: 150px;
+		height: 270px;
+	}
+	
+	.contenido-personaje {
+		height: 75px;
+	}
+	
+	.card-personaje h5 {
+		font-size: 15px;
+	}
+	
+	.card-personaje p {
+		font-size: 9.375px;
+	}
+	
+	.imagen-personaje img {
+		width: 150px;
+	}
+	
+	.boton-favorito {
+		width: 30px;
+		height: 30px;
+	}
+	.boton-eliminar {
+		width: 30px;
+		height: 30px;
+	}
+	
 }
 @media only screen and (max-width: 600px){
 	.logo img{
