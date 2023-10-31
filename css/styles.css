@@ -218,6 +218,7 @@ footer {
 
 .contenido-personaje {
 	height: 100px;
+
 }
 
 .card-personaje h5 {
@@ -558,6 +559,37 @@ footer {
 		height: 30px;
 	}
 	
+}
+@media only screen and (max-width: 1000px){
+	.card-personaje {
+		width: 125px;
+		height: 225px;
+	}
+	
+	.contenido-personaje {
+		height: 62.5px;
+	}
+	
+	.card-personaje h5 {
+		font-size: 11.25px;
+	}
+	
+	.card-personaje p {
+		font-size: 7.03px;
+	}
+	
+	.imagen-personaje img {
+		width: 125px;
+	}
+	
+	.boton-favorito {
+		width: 22.5px;
+		height: 22.5px;
+	}
+	.boton-eliminar {
+		width: 22.5px;
+		height: 22.5px;
+	}
 }
 @media only screen and (max-width: 600px){
 	.logo img{

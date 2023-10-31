@@ -559,14 +559,22 @@ cerrar.onclick = () => {
 }
 
 const verificarAncho = () => {
+    const estrella = document.querySelectorAll (".estrella")
+    const basura = document.querySelectorAll (".basura")
     if (screen.width<=1200){
-        const estrella = document.querySelectorAll (".estrella")
-        const basura = document.querySelectorAll (".basura")
         for (let i = 0; i<estrella.length; i++){
             estrella[i].classList.remove("fa-lg")
         }
         for (let i = 0; i<basura.length; i++){
             basura[i].classList.remove("fa-lg")
+        }
+    }
+    if (screen.width<=1000){
+        for (let i = 0; i<estrella.length; i++){
+            estrella[i].classList.add("fa-sm")
+        }
+        for (let i = 0; i<basura.length; i++){
+            basura[i].classList.add("fa-sm")
         }
     }
 }
