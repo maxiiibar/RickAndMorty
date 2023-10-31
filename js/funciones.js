@@ -571,10 +571,10 @@ const verificarAncho = () => {
     }
     if (screen.width<=1000){
         for (let i = 0; i<estrella.length; i++){
-            estrella[i].classList.add("fa-sm")
+            estrella[i].classList.add("fa-xs")
         }
         for (let i = 0; i<basura.length; i++){
-            basura[i].classList.add("fa-sm")
+            basura[i].classList.add("fa-xs")
         }
     }
 }
