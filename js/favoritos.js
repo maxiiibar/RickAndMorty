@@ -70,10 +70,10 @@ const crearCardsFav = (tipo, funcion, funcionSingular, contenedor, claseBoton, s
                 .then(data => {
                     cardsAHtml(data, funcionSingular, contenedor, botonTipo)
                     eliminarDeFav(tipo, funcion, funcionSingular, contenedor, claseBoton, storage, botonTipo)
+                    verificarAncho()
                 })
                 temaPag = JSON.parse(localStorage.getItem("modo"))
                 cambiarTema(temaPag)
-                verificarAncho()
         }
         else {
             let ids = memoriaFav.reduce((acc, element) => { return acc + `${element}, ` }, "")
@@ -83,10 +83,10 @@ const crearCardsFav = (tipo, funcion, funcionSingular, contenedor, claseBoton, s
                 .then(data => {
                     cardsAHtml(data, funcion, contenedor, botonTipo)
                     eliminarDeFav(tipo, funcion, funcionSingular, contenedor, claseBoton, storage, botonTipo)
+                    verificarAncho()
                 })
                 temaPag = JSON.parse(localStorage.getItem("modo"))
                 cambiarTema(temaPag)
-                verificarAncho()
         }
     }
 }
