@@ -344,6 +344,7 @@ const accionBusqueda = (mainContenedor, barraBusqueda, inputBusqueda, presentaci
                     cambiarTema(temaPag)
                 }
                 agregarAFav(".boton-personaje", "personajes-fav")
+                verificarAncho()
             })
 
         fetch(`https://rickandmortyapi.com/api/episode/?name=${inputBusqueda.value.toLowerCase()}`)
@@ -369,6 +370,7 @@ const accionBusqueda = (mainContenedor, barraBusqueda, inputBusqueda, presentaci
                     cambiarTema(temaPag)
                 }
                 agregarAFav(".boton-episodio", "episodios-fav")
+                verificarAncho()
             })
 
         fetch(`https://rickandmortyapi.com/api/location/?name=${inputBusqueda.value.toLowerCase()}`)
@@ -394,6 +396,7 @@ const accionBusqueda = (mainContenedor, barraBusqueda, inputBusqueda, presentaci
                     cambiarTema(temaPag)
                 }
                 agregarAFav(".boton-locacion", "locaciones-fav")
+                verificarAncho()
             })
     })
 }
@@ -425,6 +428,7 @@ const traerData = (contenedor, memoria, numeroPag) => {
             .then(data => {
                 cardsAHtml(data.results, cardsPersonajes, contenedorPag, "boton-favorito")
                 agregarAFav(".boton-personaje", "personajes-fav")
+                verificarAncho()
             })
         return 42
     }
@@ -439,6 +443,7 @@ const traerData = (contenedor, memoria, numeroPag) => {
             .then(data => {
                 cardsAHtml(data.results, cardsEpisodios, contenedorPag, "boton-favorito")
                 agregarAFav(".boton-episodio", "episodios-fav")
+                verificarAncho()
             })
         return 3
     }
@@ -453,6 +458,7 @@ const traerData = (contenedor, memoria, numeroPag) => {
             .then(data => {
                 cardsAHtml(data.results, cardsLocaciones, contenedorPag, "boton-favorito")
                 agregarAFav(".boton-locacion", "locaciones-fav")
+                verificarAncho()
             })
         return 7
     }
@@ -556,9 +562,11 @@ const verificarAncho = () => {
     if (screen.width<=1200){
         const estrella = document.querySelectorAll (".estrella")
         const basura = document.querySelectorAll (".basura")
-        console.log(estrella)
         for (let i = 0; i<estrella.length; i++){
             estrella[i].classList.remove("fa-lg")
+        }
+        for (let i = 0; i<basura.length; i++){
+            basura[i].classList.remove("fa-lg")
         }
     }
 }

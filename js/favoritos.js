@@ -73,6 +73,7 @@ const crearCardsFav = (tipo, funcion, funcionSingular, contenedor, claseBoton, s
                 })
                 temaPag = JSON.parse(localStorage.getItem("modo"))
                 cambiarTema(temaPag)
+                verificarAncho()
         }
         else {
             let ids = memoriaFav.reduce((acc, element) => { return acc + `${element}, ` }, "")
@@ -85,6 +86,7 @@ const crearCardsFav = (tipo, funcion, funcionSingular, contenedor, claseBoton, s
                 })
                 temaPag = JSON.parse(localStorage.getItem("modo"))
                 cambiarTema(temaPag)
+                verificarAncho()
         }
     }
 }

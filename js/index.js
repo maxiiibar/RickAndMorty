@@ -38,6 +38,7 @@ fetch(`https://rickandmortyapi.com/api/character`)
 	.then(data => {
 		cardsAHtml(data.results.slice(0, 10), cardsPersonajes, personajes, "boton-favorito")
 		agregarAFav(".boton-personaje", "personajes-fav")
+		verificarAncho()
 		/* detalleUnica(".card-personaje","character") */
 	})
 
@@ -46,6 +47,7 @@ fetch(`https://rickandmortyapi.com/api/episode`)
 	.then(data => {
 		cardsAHtml(data.results.slice(0, 6), cardsEpisodios, episodios, "boton-favorito")
 		agregarAFav(".boton-episodio", "episodios-fav")
+		verificarAncho()
 	})
 
 fetch(`https://rickandmortyapi.com/api/location`)
@@ -53,5 +55,6 @@ fetch(`https://rickandmortyapi.com/api/location`)
 	.then(data => {
 		cardsAHtml(data.results.slice(0, 6), cardsLocaciones, locaciones, "boton-favorito")
 		agregarAFav(".boton-locacion", "locaciones-fav")
+		verificarAncho()
 	})
 
