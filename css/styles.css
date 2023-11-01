@@ -218,7 +218,6 @@ footer {
 
 .contenido-personaje {
 	height: 100px;
-
 }
 
 .card-personaje h5 {
@@ -559,6 +558,27 @@ footer {
 		height: 30px;
 	}
 	
+	.card-episodio,
+	.card-locacion {
+		width: 225px;
+		height: 110px;
+		padding: 7.5px;
+	}
+
+	.contenido-episodio,
+	.contenido-locacion {
+		height: 86.25px;
+	}
+
+	.contenido-episodio h5,
+	.contenido-locacion h5 {
+		font-size: 15px;
+	}
+
+	.contenido-episodio p,
+	.contenido-locacion p {
+		font-size: 11.25px;
+	}
 }
 @media only screen and (max-width: 1000px){
 	.card-personaje {
@@ -586,10 +606,12 @@ footer {
 		width: 22.5px;
 		height: 22.5px;
 	}
+
 	.boton-eliminar {
 		width: 22.5px;
 		height: 22.5px;
 	}
+
 	.contenedor,
 	.personajes,
 	.locaciones,
@@ -601,6 +623,35 @@ footer {
 	.boxLocaciones,
 	.boxPersonajes {
 		gap: 30px;
+	}
+
+	.card-episodio,
+	.card-locacion {
+		width: 187.5px;
+		height: 91.6px;
+		padding: 6.25px;
+	}
+
+	.contenido-episodio,
+	.contenido-locacion {
+		height: 71.87px;
+	}
+
+	.contenido-episodio h5,
+	.contenido-locacion h5 {
+		font-size: 12.5px;
+	}
+
+	.contenido-episodio p,
+	.contenido-locacion p {
+		font-size: 9.37px;
+	}
+
+	.vermas {
+		margin: 70px;
+		font-size: 15px;
+		padding: 7px;
+		margin-bottom: 30px;
 	}
 }
 @media only screen and (max-width: 600px){
@@ -621,7 +672,7 @@ footer {
 	.logo{
 		width: 50px;
 		height: 50px;
-	}
+	} 
 	#input-busqueda{
 		height: 35px;
 		width: 200px;
