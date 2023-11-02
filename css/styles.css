@@ -699,6 +699,9 @@ footer {
 		font-size: 30px;
 		margin: 24.5px 0 35px 0;
 	}
+	.nombre, .apellido, .mail, .info input {
+		width: 300px;
+	}
 }
 @media only screen and (max-width: 480px){
 	.logo img{
@@ -712,12 +715,11 @@ footer {
 	#input-busqueda{
 		height: 35px;
 		width: 200px;
-		font-size: 10px;
+		font-size: 15px;
 	}
 	.submit-busqueda{
 		height: 35px;
 		width: 35px;
-		font-size: 15px;
 		border-radius: 100% ;
 	}
 	.abrir-menu{
@@ -742,7 +744,15 @@ footer {
 	}
 	.container h2{
 		font-size: 25px;
-		margin: 13px 0 24.5px 0;
+		margin: 13px 0 35px 0;
 		text-align: center;
+	}
+	.container h3{
+		font-size: 25px;
+		margin-bottom: 35px;
+		text-align: center;
+	}
+	.encontrados{
+		margin-top: 35px;
 	}
 }
