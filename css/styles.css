@@ -731,16 +731,20 @@ footer {
 		top: 8px;
 	}
 	h1 {
-		font-size: 17px;
+		font-size: 20px;
 	}
 	.seccionuno p, .seccionuno a {
-		font-size: 5px;
+		font-size: 7px;
 	}
 	.presentacion {
 		height: 225px;
 	}
 	.seccionuno{
 		padding: 35px;
+		width: 50%;
+	}
+	.secciondos{
+		width: 50%;
 	}
 	.container h2{
 		font-size: 25px;
