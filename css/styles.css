@@ -126,7 +126,7 @@ body {
 }
 
 .imagenfondo {
-	background-image: url("../images/fondorick.webp");
+	background-image: url("../images/fondorickCortado.webp");
 	background-size: cover;
 	background-position-y: center;
 	background-position-x: left;
@@ -482,6 +482,7 @@ footer {
 @media only screen and (max-width: 1300px){
 	.navbar{
 		padding: 20px;
+		align-content: center;
 	}
 	.abrir-menu{
 		display: block;
@@ -653,6 +654,25 @@ footer {
 		padding: 7px;
 		margin-bottom: 30px;
 	}
+	h1 {
+		font-size: 35px;
+	}
+}
+@media only screen and (max-width: 800px){
+	h1 {
+		font-size: 30px;
+	}
+	.seccionuno p, .seccionuno a {
+		font-size: 10px;
+		margin: 5px 0;
+	}
+	.presentacion {
+		height: 300px;
+	}
+	.container h2{
+		font-size: 40px;
+		margin: 35px 0 50px 0;
+	}
 }
 @media only screen and (max-width: 600px){
 	.logo img{
@@ -662,6 +682,22 @@ footer {
 	.logo{
 		width: 60px;
 		height: 60px;
+	}
+	h1 {
+		font-size: 22.5px;
+	}
+	.seccionuno p, .seccionuno a {
+		font-size: 8px;
+	}
+	.presentacion {
+		height: 250px;
+	}
+	.seccionuno{
+		padding: 35px;
+	}
+	.container h2{
+		font-size: 30px;
+		margin: 24.5px 0 35px 0;
 	}
 }
 @media only screen and (max-width: 480px){
@@ -691,5 +727,22 @@ footer {
 	.fa-magnifying-glass{
 		right: 10px;
 		top: 8px;
+	}
+	h1 {
+		font-size: 17px;
+	}
+	.seccionuno p, .seccionuno a {
+		font-size: 5px;
+	}
+	.presentacion {
+		height: 225px;
+	}
+	.seccionuno{
+		padding: 35px;
+	}
+	.container h2{
+		font-size: 25px;
+		margin: 13px 0 24.5px 0;
+		text-align: center;
 	}
 }
