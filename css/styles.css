@@ -67,7 +67,7 @@ body {
 	padding: 10px;
 	height: 40px;
 	width: 300px;
-	border-radius: 10px;
+	border-radius: 8px;
 	border: none;
 }
 
@@ -701,6 +701,13 @@ footer {
 	}
 	.nombre, .apellido, .mail, .info input {
 		width: 300px;
+	}
+	.footer{
+		font-size: 12px;
+		padding: 10px 40px 20px 40px ;
+	}
+	.footer p{
+		text-align: center;
 	}
 }
 @media only screen and (max-width: 480px){
