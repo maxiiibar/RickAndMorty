@@ -479,6 +479,10 @@ footer {
 	color: #75a83e;
 }
 
+.noVisible{
+	opacity: 0;
+}
+
 @media only screen and (max-width: 1300px){
 	.navbar{
 		padding: 20px;
@@ -768,5 +772,29 @@ footer {
 	}
 	.seccionuno{
 		padding-right: 10px;
+	}
+}
+@media only screen and (max-width: 370px){
+	.logo img{
+		width: 45px;
+		height: 45px;
+	}
+	.logo{
+		width: 45px;
+		height: 45px;
+	} 
+	#input-busqueda{
+		height: 30px;
+		width: 150px;
+		font-size: 12px;
+	}
+	.submit-busqueda{
+		height: 30px;
+		width: 30px;
+		border-radius: 100% ;
+	}
+	.fa-magnifying-glass{
+		right: 7px;
+		top: 6px;
 	}
 }
