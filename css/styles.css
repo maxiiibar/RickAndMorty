@@ -797,4 +797,7 @@ footer {
 		right: 7px;
 		top: 6px;
 	}
+	.navbar{
+		height: 80px;
+	}
 }
